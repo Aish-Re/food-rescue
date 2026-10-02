@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.sidebar{
+    background-color: #f1f8f3;
+    width: 240px;
+    min-height: 100vh;
+}
+
+.website-logo img{
+    width: 200px;
+    height: auto;
+}
+
+.website-logo{
+    padding:20px 20px 10px;
+}
+
+.sidebar-menus{
+    margin: 15px;
+}
+
+.sidebar-menus > div {
+    padding: 14px 15px;
+    display: flex;
+    gap: 14px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-menus > div svg{
+    height: 20px;
+    stroke-width: 2;
+   
+}
+
+.sidebar-menus > div:hover{
+    background-color: #dcefe1;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+
