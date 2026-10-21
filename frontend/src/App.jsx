@@ -1,9 +1,10 @@
-import Sidebar from "./components/layouts/Sidebar/Sidebar";
+import DashboardLayout from "./components/layouts/DashboardLayout/DashboardLayout";
 import "./App.css";
 
 function App(){
     return(
-        <Sidebar />
+        
+        <DashboardLayout />
     );
 }
 

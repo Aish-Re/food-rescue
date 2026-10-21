@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 .sidebar{
-    background-color: #f1f8f3;
+    background-color: var(--color-sidebar);
     width: 240px;
     min-height: 100vh;
 }
@@ -34,9 +32,9 @@
 }
 
 .sidebar-menus > div:hover{
-    background-color: #dcefe1;
+    background-color: var(--color-primary-hover);
+    color: var(--color-card);
     cursor: pointer;
     border-radius: 10px;
-    
+    font-weight: 600;
 }
-
