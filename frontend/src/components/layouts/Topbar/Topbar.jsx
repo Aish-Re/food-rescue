@@ -24,7 +24,7 @@ function Topbar() {
                     <h3>ABC Restaurant</h3>
                     <p>Donor</p>
                 </div>
-                <button className="topbar-icon-button" aria-label="Messages"> 
+                <button className="topbar-icon-button" aria-label="Open Profile"> 
                     <ChevronDown size={20}/>
                 </button>
             </div>

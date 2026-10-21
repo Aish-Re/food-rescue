@@ -50,3 +50,7 @@
     color: var(--color-text-primary);
 }
 
+.topbar-icon-button svg{
+    stroke-width: 2.2;
+}
+

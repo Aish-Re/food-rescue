@@ -1,0 +1,36 @@
+.welcome-banner{
+    background-color: var(--color-background);
+    padding: 16px 22px;
+    display: flex;
+    gap: 200px;
+    align-items: center;
+}
+
+.greetings h1{
+    font-size: 24px;
+}
+
+.greetings p{
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 8px;
+}
+
+.create-donation button {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 6px;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.create-donation svg {
+    stroke-width: 2.2;
+}
