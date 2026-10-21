@@ -1,0 +1,66 @@
+.impact-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    align-items: center;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    padding: 16px 22px;
+    margin: 16px;
+    height: fit-content;
+    border-radius: 10px;
+}
+
+.impact-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.impact-card-icon svg {
+    stroke-width: 2.2;
+}
+
+.impact-card-icon.green {
+    background-color: #E1F4E5;
+    color: #23834D;
+}
+
+.impact-card-icon.orange {
+    background-color: #FFF0DF;
+    color: #D9822B;
+}
+
+.impact-card-icon.purple {
+    background-color: #F0E7FF;
+    color: #8056BF;
+}
+
+.impact-card-icon.blue {
+    background-color: #E3EEFF;
+    color: #3975C6;
+}
+
+.impact-stats {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+.impact-label {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+.impact-change {
+    color: var(--color-primary);
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 570;
+}

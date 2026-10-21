@@ -23,7 +23,7 @@
 }
 
 .profile-avatar{
-    background-color: var(--color-primary);
+    background-color: var(--color-button);
     width: 35px;
     height: 35px;
     color: white;

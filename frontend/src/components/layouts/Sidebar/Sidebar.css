@@ -32,7 +32,7 @@
 }
 
 .sidebar-menus > div:hover{
-    background-color: var(--color-primary-hover);
+    background-color: var(--color-button);
     color: var(--color-card);
     cursor: pointer;
     border-radius: 10px;
