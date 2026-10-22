@@ -1,4 +1,5 @@
 import ImpactCards from "../../../components/dashboard/ImpactCards/ImpactCards";
+import RedistributionOverview from "../../../components/dashboard/RedistributionOverview/RedistributionOverview";
 import WelcomeBanner from "../../../components/dashboard/WelcomeBanner/WelcomeBanner";
 import "./DonorDashboard.css";
 
@@ -7,6 +8,7 @@ function DonorDashboard() {
         <section className="donor-dashboard">
             <WelcomeBanner />
             <ImpactCards />
+            <RedistributionOverview />
         </section>
     );
 }

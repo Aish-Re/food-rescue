@@ -4,7 +4,7 @@ function ImpactCard({ label, stats, change, icon, color }) {
     const Icon = icon;
 
     return (
-        <div className="impact-card">
+        <section className="impact-card">
             <div className={`impact-card-icon ${color}`}>
                 <Icon />
             </div>
@@ -14,7 +14,7 @@ function ImpactCard({ label, stats, change, icon, color }) {
                 <p className="impact-label">{label}</p>
                 <p className="impact-change"> ↑ {change}</p>
             </div>
-        </div>
+        </section>
     );
 }
 

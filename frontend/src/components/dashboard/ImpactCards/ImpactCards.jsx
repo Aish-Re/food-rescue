@@ -38,7 +38,7 @@ const impactData = [
 
 function ImpactCards() {
     return (
-        <div className="impact-cards">
+        <section className="impact-cards">
             {impactData.map((item) => (
                 <ImpactCard
                     key = {item.label}
@@ -49,7 +49,7 @@ function ImpactCards() {
                     color = {item.color}
                 />
             ))}
-        </div>
+        </section>
     );
 }
 
