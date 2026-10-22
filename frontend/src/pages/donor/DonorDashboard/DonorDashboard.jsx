@@ -8,7 +8,11 @@ function DonorDashboard() {
         <section className="donor-dashboard">
             <WelcomeBanner />
             <ImpactCards />
-            <RedistributionOverview />
+            
+            <div className="dashboard-middle-row">
+                <RedistributionOverview />
+                
+            </div>
         </section>
     );
 }
