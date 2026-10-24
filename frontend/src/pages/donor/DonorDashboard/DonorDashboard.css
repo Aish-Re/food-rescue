@@ -1,3 +1,7 @@
 .dashboard-middle-row{
     display: flex;
 }
+
+.dashboard-last-row {
+    display: flex;
+}

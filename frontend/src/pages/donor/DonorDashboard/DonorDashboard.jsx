@@ -1,3 +1,4 @@
+import ActiveRedistributions from "../../../components/dashboard/ActiveRedistributions/ActiveRedistributions";
 import ImpactCards from "../../../components/dashboard/ImpactCards/ImpactCards";
 import RecentActivity from "../../../components/dashboard/RecentActivity/RecentActivity";
 import RedistributionOverview from "../../../components/dashboard/RedistributionOverview/RedistributionOverview";
@@ -13,7 +14,10 @@ function DonorDashboard() {
             <div className="dashboard-middle-row">
                 <RedistributionOverview />
                 <RecentActivity />
-                
+            </div>
+
+            <div className="dashboard-last-row">
+                <ActiveRedistributions />
             </div>
         </section>
     );

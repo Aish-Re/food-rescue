@@ -7,7 +7,6 @@
     width: 600px;
 }
 
-
 .recent-activity-header {
     display: flex;
     justify-content: space-between;
@@ -17,4 +16,12 @@
 .recent-activity-header h2 {
     font-size: 18px;
     font-weight: 600;
+}
+
+.recent-activity-header button {
+    border: none;
+    background: transparent;
+    color: var(--color-button);
+    font-weight: 600;
+    cursor: pointer;
 }

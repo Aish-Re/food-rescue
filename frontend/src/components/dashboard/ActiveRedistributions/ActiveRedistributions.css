@@ -1,0 +1,55 @@
+.active-redistributions{
+    background-color: var(--color-card);
+    padding: 16px 22px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin: 10px 16px;
+    width: 600px;
+}
+
+
+.active-redistributions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 16px;
+}
+
+.active-redistributions-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.active-redistributions-table {
+    width: 100%;
+}
+
+.active-redistributions-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.active-redistributions-table thead {
+    background-color: var(--color-background);
+}
+
+.active-redistributions-table th {
+    padding: 8px 6px;
+    font-size: 13px;
+    font-weight: 550;
+    white-space: nowrap;
+}
+
+.active-redistributions-table td {
+    padding: 10px;
+    font-size: 13px;
+}
+
+.active-redistributions-header button {
+    border: none;
+    background: transparent;
+    color: var(--color-button);
+    font-weight: 600;
+    cursor: pointer;
+}
+
