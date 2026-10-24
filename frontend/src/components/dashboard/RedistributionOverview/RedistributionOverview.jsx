@@ -1,6 +1,6 @@
 import "./RedistributionOverview.css";
 import { useState } from "react";
-import { ResponsiveContainer, XAxis, YAxis, LineChart, Tooltip, CartesianGrid, Line } from "recharts";
+import { ResponsiveContainer, ComposedChart, Area, XAxis, YAxis, Tooltip, CartesianGrid, Line, usePlotArea, useCartesianScale } from "recharts";
 
 const graphData = {
     meals : [
@@ -24,12 +24,71 @@ const graphData = {
     ]
 };
 
+function CustomToolTip( {active, payload, selectedMetric, lineColor}) {
+    if (!active || !payload || !payload.length) {
+        return null;
+    }
 
+    const value = payload[0].value;
+
+    return (
+        <div 
+            className="custom-tooltip"
+            style={{backgroundColor : lineColor}}
+        >
+            <p>{value} { selectedMetric === "meals" ? "meals" : "kg"} </p>
+        </div>
+    )
+}
+
+function HoverDot ({ cx, cy, fill, payload, onActiveChange }) {
+    if (cx == null || cy == null) {
+        return null;
+    }
+
+    return (
+        <circle 
+            cx = {cx}
+            cy = {cy}
+            fill = {fill}
+            r = {6}
+            stroke= "white"
+            strokeWidth={2}
+            onMouseEnter={() => onActiveChange(payload)}
+            onMouseLeave={() => onActiveChange(null)}
+        />
+    )
+}
+
+function HoverLine( {lineColor, activePoint}) {
+    const plotArea = usePlotArea();
+    const coordinate = useCartesianScale(
+        activePoint ? {x : activePoint.day, y : activePoint.value} : {x : "", y : 0}
+    );
+
+    if (!activePoint || !plotArea || !coordinate) {
+        return null;
+    }
+
+    return (
+        <line 
+            x1={coordinate.x}
+            y1={coordinate.y}
+            x2={coordinate.x}
+            y2={plotArea.y + plotArea.height}
+            stroke={lineColor}
+            strokeWidth={3}
+            pointerEvents="none"
+            strokeDasharray="5 4"
+        />
+    )
+}
 
 function RedistributionOverview() {
     const [selectedMetric, setSelectedMetric] = useState("meals");
     const activeData = graphData[selectedMetric];
-    const lineColor = selectedMetric === "meals" ? "#23834D" : "#A3C91A";
+    const lineColor = selectedMetric === "meals" ? "var(--color-chart-meals)" : "var(--color-chart-farmers)";
+    const [activePoint, setActivePoint] = useState(null);
 
     return (
         <section className="redistribution-overview">
@@ -61,31 +120,51 @@ function RedistributionOverview() {
 
             <div className="redistribution-graph">
                 <ResponsiveContainer>
-                    <LineChart  
+                    <ComposedChart  
                         data={activeData}
-                        margin={{ top : 10, right : 10, bottom : 0, left : 0}}
+                        margin={{ top : 20, right : 20, bottom : 5, left : 5}}
                     >
+
+                        <defs>
+                            <linearGradient id = "chartFill" x1 = "0" y1 = "0" x2 = "0" y2 = "1">
+                                <stop offset = "0%" stopColor={lineColor} stopOpacity={0.47} />
+                                <stop offset = "100%" stopColor={lineColor} stopOpacity={0.03} />
+                            </linearGradient>
+                        </defs>
+
                         <CartesianGrid
-                            stroke="#E5ECE5" 
+                            stroke="var(--color-border)" 
                         />
 
                         <XAxis 
                             dataKey = "day"
                             axisLine = {false}
                             tickLine = {false}
-                            tick = {{ fill: "#718078", fontSize: 13 }}
+                            tick = {{ fill: "var(--color-text-secondary)", fontSize: 13 }}
                             tickMargin={14}
                         />
 
                         <YAxis
                             axisLine = {false}
                             tickLine = {false}
-                            tick = {{ fill : "#718078", fontSize: 13 }} 
+                            tick = {{ fill : "var(--color-text-secondary)", fontSize: 13 }} 
                             tickMargin={14}
                         />
                         
                         <Tooltip
+                            content={
+                                <CustomToolTip 
+                                    selectedMetric={selectedMetric}
+                                    lineColor={lineColor}
+                                />
+                            }
+                            cursor={false}
+                        />
 
+                        <Area
+                            dataKey= "value"
+                            type= "monotone"
+                            fill= "url(#chartFill)"   
                         />
 
                         <Line 
@@ -93,10 +172,21 @@ function RedistributionOverview() {
                             stroke= {lineColor}
                             strokeWidth={2.5}
                             dot = {{ fill : lineColor, r : 3}}
-                            activeDot = {{ r : 6}}
+                            activeDot = { (props) => (
+                                <HoverDot 
+                                    {...props}
+                                    onActiveChange={setActivePoint}
+                                />
+                            )}
                             type= "monotone"
                         />
-                    </LineChart>
+
+                        <HoverLine 
+                            lineColor={lineColor}
+                            activePoint={activePoint}
+                        />
+
+                    </ComposedChart>
                 </ResponsiveContainer>
             </div>
         </section>

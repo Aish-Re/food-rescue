@@ -1,0 +1,20 @@
+.recent-activity{
+    background-color: var(--color-card);
+    padding: 16px 22px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin: 10px 16px;
+    width: 600px;
+}
+
+
+.recent-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.recent-activity-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}

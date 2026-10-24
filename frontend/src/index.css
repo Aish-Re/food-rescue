@@ -12,6 +12,12 @@
     --color-text-primary: #193329;
     --color-text-secondary: #6a7c72;
     --color-border: #E5ECE5;
+
+    --color-chart-meals: var(--color-primary);
+    --color-chart-meals-light: #DDF0DE;
+
+    --color-chart-farmers: #168C8C;
+    --color-chart-farmers-light: #D9F1EF;
 }
 
 
