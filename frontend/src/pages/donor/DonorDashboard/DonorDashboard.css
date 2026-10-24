@@ -3,5 +3,13 @@
 }
 
 .dashboard-last-row {
-    display: flex;
+    display: flex;   
+}
+
+.dashboard-last-row .active-redistributions {
+    flex: 2;
+}
+
+.dashboard-last-row .impact-story {
+    flex: 1;
 }
