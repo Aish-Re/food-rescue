@@ -7,7 +7,6 @@ function ImpactStory() {
 
             <div className="impact-story-card">
                 <div className="impact-story-label">
-                    
                     <p>THE IMPACT WE CREATE</p>
                 </div>
 
